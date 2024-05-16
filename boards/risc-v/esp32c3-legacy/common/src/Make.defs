@@ -96,6 +96,10 @@ ifeq ($(CONFIG_SPI_ICE40),y)
   CSRCS += esp32c3_board_ice40.c
 endif
 
+ifeq ($(CONFIG_LCD_ILI9341),y)
+  CSRCS += esp32c3_ili9341.c
+endif
+
 DEPPATH += --dep-path src
 VPATH += :src
 CFLAGS += ${INCDIR_PREFIX}$(TOPDIR)$(DELIM)arch$(DELIM)$(CONFIG_ARCH)$(DELIM)src$(DELIM)board$(DELIM)src
